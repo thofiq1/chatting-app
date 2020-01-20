@@ -1,0 +1,132 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+    android:id="@+id/pic"
+    android:layout_width="412dp"
+    android:layout_height="100dp">
+    <ImageView
+
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_person_black_24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+
+        />
+<TextView
+    android:id="@+id/profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:text="PROFILE"
+    android:layout_marginLeft="200dp"
+    android:layout_marginTop="50dp"
+    />
+
+
+</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/account"
+        android:layout_width="412dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="115dp">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="16dp"
+            android:text="Account"
+            android:textSize="20dp"
+
+            />
+
+        <ImageView
+            android:layout_width="80dp"
+
+            android:layout_height="40dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/ac" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chats"
+    android:layout_width="412dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="185dp">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="13dp"
+            android:text="Chats"
+            android:textSize="20dp"
+
+            />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_chat_black_24dp"
+
+        />
+
+</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contactus"
+        android:layout_width="412dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="250dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="Contact Us"
+            android:textSize="20dp"
+            android:layout_marginTop="13dp"
+
+            />
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_contacts_black_24dp"
+
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/FAQ"
+        android:layout_width="412dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="320dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="18dp"
+            android:text="FAQ"
+            android:textSize="20dp"
+
+            />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_error_black_24dp"
+
+            />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>
+
+
+

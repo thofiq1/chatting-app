@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="118dp">
+
+
+        <EditText
+            android:id="@+id/MobieNo"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="320dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/roundbutton"
+            android:ems="10"
+            android:hint="  mobile number"
+            android:paddingLeft="10dp"
+
+            ></EditText>
+
+
+
+
+        <Button
+            android:id="@+id/SendOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginVertical="400dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/roundbutton"
+            android:text="Send OTP" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:background="@drawable/phlogo"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+
+
+            />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

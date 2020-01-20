@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "176145400622",
+    "firebase_url": "https://thofiq-f7151.firebaseio.com",
+    "project_id": "thofiq-f7151",
+    "storage_bucket": "thofiq-f7151.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176145400622:android:25790bc437c3f1d60330bf",
+        "android_client_info": {
+          "package_name": "com.example.thofiq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176145400622-97t53o6f9do6h0svvrbgvhaq2seajckm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thofiq",
+            "certificate_hash": "da4b194fadcd23c48cba0cefc92995ffb96e8ac5"
+          }
+        },
+        {
+          "client_id": "176145400622-632ctf1kd7v4t9f8b4sbk061859i1g2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk_TUIobAekOaSl6wl5QGyQIDLA7cZL6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176145400622-632ctf1kd7v4t9f8b4sbk061859i1g2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

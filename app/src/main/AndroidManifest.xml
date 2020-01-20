@@ -30,6 +30,11 @@
         <activity android:name=".ActivityList" />
         <activity android:name=".contacts" />
         <activity android:name=".FillDetails">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
@@ -37,11 +42,7 @@
             android:label="chat"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".MainPage" ></activity>

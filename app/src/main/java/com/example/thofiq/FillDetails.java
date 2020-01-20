@@ -7,9 +7,18 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -24,6 +33,8 @@ public class FillDetails extends AppCompatActivity {
 
     CheckBox term;
     EditText location;
+    FirebaseFirestore db;
+    DocumentReference ref;
 
     private int CONTACT_PERMISSION_CODE=1;
     public static final int RequestPermissionCode = 7;
@@ -34,12 +45,16 @@ public class FillDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_details);
 
+        db = FirebaseFirestore.getInstance();
+//        ref = db.collection("users").document("aaaaa");
+
 
         username = (EditText) findViewById(R.id.fullName);
-        username.setText(";nsdxjvhdsxzn");
+
 
         abc = (EditText) findViewById(R.id.userEmailId);
         location = (EditText) findViewById(R.id.location);
@@ -52,64 +67,53 @@ public class FillDetails extends AppCompatActivity {
             public void onClick(View v) {
                 email = abc.getText().toString();
                 name = username.getText().toString();
-                abc.setText("aaaaaaaaaaaaa");
-                EmailValidate(email);
+
+               EmailValidate(email);
 
 
-                // If All permission is enabled successfully then this block will execute.
-                if (CheckingPermissionIsEnabledOrNot()) {
-                    Toast.makeText(FillDetails.this, "All Permissions Granted Successfully", Toast.LENGTH_LONG).show();
-                }
+//                // If All permission is enabled successfully then this block will execute.
+//                if (CheckingPermissionIsEnabledOrNot()) {
+//                    Toast.makeText(FillDetails.this, "All Permissions Granted Successfully", Toast.LENGTH_LONG).show();
+//            }
+//
+//            // If, If permission is not enabled then else condition will execute.
+//                else {
+//
+//                //Calling method to enable permission.
+//                RequestMultiplePermission();
+//
+//            }
+                // Create a new user with a first and last name
+                Map user = new HashMap();
+                user.put("name", username);
+                user.put("Email",abc);
+                user.put("location", location);
+//                Toast.makeText(FillDetails.this,"data send",Toast.LENGTH_LONG).show();
 
-                // If, If permission is not enabled then else condition will execute.
-                else {
 
-                    //Calling method to enable permission.
-                    RequestMultiplePermission();
+                db.collection("users")
+                        .add(user)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+//                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                               Toast.makeText(FillDetails.this,"data send to database",Toast.LENGTH_LONG).show();
 
-                }
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(FillDetails.this,"aaaaaaa",Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+
             }
         });
     }
 
-            //    private void requestStoragePermission() {
-//        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-//                Manifest.permission.READ_CONTACTS)) {
-//
-//            new AlertDialog.Builder(this)
-//                    .setTitle("Permission needed")
-//                    .setMessage("This permission is needed because of this and that")
-//                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            ActivityCompat.requestPermissions(FillDetails.this,
-//                                    new String[] {Manifest.permission.READ_CONTACTS}, CONTACT_PERMISSION_CODE);
-//                        }
-//                    })
-//                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            dialog.dismiss();
-//                        }
-//                    })
-//                    .create().show();
-//
-//        } else {
-//            ActivityCompat.requestPermissions(this,
-//                    new String[] {Manifest.permission.READ_CONTACTS}, CONTACT_PERMISSION_CODE);
-//        }
-//    }
-//
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        if (requestCode ==CONTACT_PERMISSION_CODE) {
-//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
-//            } else {
-//                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
+
 //Permission function starts from here
             private void RequestMultiplePermission() {
 
